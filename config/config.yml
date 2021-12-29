@@ -1,0 +1,29 @@
+data_dir: "../../data/resnet/cifar-10-batches-py"
+
+# Training Params
+device: "cuda" # "cuda" or "cpu"
+run_dir: "./runs"
+num_classes: 10
+num_epochs: 200
+train_bs: 512
+val_ratio: 0.05
+max_lr: 1e-3
+min_lr: 1e-5
+pct_start: 0.2
+val_bs: 512
+workers: 8
+seed: 10
+
+# transforms
+pad: 4
+pad_mode: "symmetric"
+image_size: 32
+horizontal_flip_prob: 0.5
+cutout_size: 8
+cutout_prob: 0.5
+cutout_color: [0, 0, 0]
+
+# visualize
+checkpoint_path: "./runs/train/experiment_0/Resnet18_best_model.pth"
+mean: [0.49141567945480347, 0.48216670751571655, 0.44657519459724426]
+std: [0.2469293624162674, 0.24336205422878265, 0.2614584267139435]
